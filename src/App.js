@@ -22,8 +22,6 @@ function App() {
         setNewTask('');
     }
 
-    console.log(tasks)
-
     function completeTask(id) {
         setTasks(prevState => prevState.map(task =>
             task.id === id ? {...task, completed: !task.completed} : task
