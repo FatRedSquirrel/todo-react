@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: 'PT Sans', sans-serif;
+    height: 100%;
+    background-color: #e2ddfc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+    width: 380px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0px 25px 50px rgb(213, 208, 250);
+    border-radius: 0 0 20px 20px;
+    gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    padding: 10px 0;
+    border-radius: 20px 20px 0 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+    color: #fff;
+}
+
+.todo-list {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.mark {
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background-image: url("./images/check3.png");
+    background-size: cover;
+}
+
+.task {
+    color: #000;
+    position: relative;
+    margin-right: 20px;
+}
+
+.task-completed {
+    opacity: 0.5;
+}
+
+.task-completed::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 2px;
+    background-color: #000;
+    left: -5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.todo-item {
+    width: 100%;
+    padding: 15px 0;
+    position: relative;
+}
+
+.todo-item:not(:last-child) {
+    border-bottom: 1px solid #7e6eee;
+}
+
+.delete {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url("./images/trash.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.new-task {
+    border-radius: 12px;
+    padding: 3px 24px;
+    height: 28px;
+    background-color: #6655f1;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    transition: background-color .2s;
+}
+
+.new-task:hover {
+    background-color: #3e2cd7;
+}
+
+.new-task:active {
+    background-color: #7568e8;
+}
+
+.new-task-container {
+    display: flex;
+    align-items: flex-end;
+    height: 28px;
+    position: relative;
+}
+
+.new-task-input {
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    margin-right: 20px;
+}
+
+.add-new-task {
+    border: 1px solid #6655f1;
+    color: #000;
+    padding: 4px 20px;
+    border-radius: 12px;
+    transition: .2s;
+}
+
+.add-new-task:hover {
+    background-color: #6655f1;
+    color: #fff;
+}
+
+.add-new-task:active {
+    opacity: 0.6;
+}
+
+.warning {
+    color: red;
+    font-size: 12px;
+}
+
+.empty-new-task-warning {
+    position: absolute;
+    left: 0;
+    bottom: -17px;
 }
